@@ -1,0 +1,29 @@
+<html>
+<body>
+报告可以替换为常规字符串文字的文本块。
+<p><b>示例：</b></p>
+<pre><code>
+  Object obj = engine.eval("""
+                           function hello() {
+                             print('"Hello, world"');
+                           }
+
+                           hello();
+                           """);
+</code></pre>
+<p>在应用快速修复后：</p>
+<pre><code>
+  Object obj = engine.eval("function hello() {\n" +
+                           "  print('\"Hello, world\"');\n" +
+                           "}\n" +
+                           "\n" +
+                           "hello();\n");
+</code></pre>
+<!-- tooltip end -->
+<p>
+  <i>文本块</i>在 Java 15 中出现。
+  此检查有助于为向后兼容早期 Java 版本而降级。
+</p>
+<p><small>2019.3 最新变化</small></p>
+</body>
+</html>

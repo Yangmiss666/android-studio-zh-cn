@@ -1,0 +1,24 @@
+<html>
+<body>
+报告其中一个实参为空字符串的字符串串联。
+此类串联不必要。 有时，会作为习惯用法将非 <code>String</code> 对象或基元转换为 <code>String</code>，但在这种情况下，使用类似 <code>String.valueOf</code> 的方法会更清晰。
+<p>
+  建议通过快速修复来简化串联。
+</p>
+<p><b>示例：</b></p>
+<pre><code>
+  void foo(int x, int y) {
+    String s = "" + x + " ; " + y;
+  }
+</code></pre>
+<p>在应用快速修复后：</p>
+<pre><code>
+  void foo(int x, int y) {
+    String s = x + " ; " + y;
+  }
+</code></pre>
+<!-- tooltip end -->
+<p>
+  使用<b>仅报告无需其他更改即可移除空字符串的情况</b>选项可以仅报告可删除空字符串而不使用 <code>String.valueOf</code> 转换其他操作数的情况。
+</body>
+</html>
